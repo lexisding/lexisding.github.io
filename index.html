@@ -6,7 +6,7 @@
   <title>Lexi Ding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after {
@@ -52,12 +52,12 @@
     }
 
     .site-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 52px;
-      font-weight: 400;
+      font-family: 'Caveat', cursive;
+      font-size: 64px;
+      font-weight: 600;
       color: var(--charcoal);
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      line-height: 1.05;
+      margin-bottom: 0.9rem;
     }
 
     .tagline-1 {
@@ -67,16 +67,16 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.5rem;
     }
 
     .tagline-2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Caveat', cursive;
       font-style: italic;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 400;
       color: var(--charcoal);
-      margin-bottom: 1.85rem;
+      margin-bottom: 1.75rem;
     }
 
     .ornament {
@@ -103,12 +103,22 @@
       flex-shrink: 0;
     }
 
+    /* small coffee cup stamps below the header ornament */
+    .header-doodle {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.9rem;
+    }
+
     /* ── Navigation ── */
     nav {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      margin: 2.25rem 0 3rem;
+      margin: 2.5rem 0 3rem;
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      padding: 0.85rem 0;
     }
 
     nav::-webkit-scrollbar { display: none; }
@@ -116,34 +126,35 @@
     .nav-inner {
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 0.5rem;
       white-space: nowrap;
       min-width: min-content;
     }
 
     .nav-tab {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 500;
-      font-variant: small-caps;
-      letter-spacing: 0.1em;
-      text-transform: lowercase;
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
       color: var(--muted);
       cursor: pointer;
-      padding-bottom: 0.35rem;
-      border-bottom: 1.5px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
+      padding: 0.3rem 1.1rem;
+      border-radius: 20px;
+      border: 1.5px solid transparent;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       user-select: none;
     }
 
     .nav-tab:hover {
       color: var(--charcoal);
-      border-bottom-color: var(--gold-dim);
+      border-color: var(--hairline);
+      background: rgba(184,151,74,0.07);
     }
 
     .nav-tab.active {
       color: var(--charcoal);
-      border-bottom-color: var(--gold);
+      background: rgba(184,151,74,0.14);
+      border-color: var(--gold-dim);
     }
 
     /* ── Tab panels ── */
@@ -172,16 +183,40 @@
       margin: 1.75rem 0;
     }
 
-    /* ── Section label (gold uppercase) ── */
+    /* ── Section label — now in Caveat ── */
     .section-label {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
+      font-family: 'Caveat', cursive;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold);
+    }
+
+    /* wrapper: label + inline doodle, side by side */
+    .label-row {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
       margin-bottom: 1.2rem;
+    }
+
+    /* wrapper: story title + inline doodle */
+    .title-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.65rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .title-row .story-title {
+      margin-bottom: 0;
+    }
+
+    /* ── Shared doodle style ── */
+    .doodle {
+      flex-shrink: 0;
+      display: block;
     }
 
     /* ── Gold link ── */
@@ -195,10 +230,11 @@
 
     /* ── Tab 1: Chef's Note ── */
     .intro-para {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.82;
-      color: var(--charcoal);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #4a4a4a;
     }
 
     .bullet-list {
@@ -229,12 +265,12 @@
 
     /* ── Tab 2: The Story Behind ── */
     .story-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 500;
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      font-weight: 600;
       color: var(--charcoal);
       margin-bottom: 0.3rem;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .story-meta {
@@ -274,9 +310,9 @@
     }
 
     .placeholder-box p {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Caveat', cursive;
       font-style: italic;
-      font-size: 17px;
+      font-size: 18px;
       color: #999;
       line-height: 1.6;
       margin: 0;
@@ -298,9 +334,9 @@
     }
 
     .project-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 500;
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      font-weight: 600;
       color: var(--charcoal);
     }
 
@@ -313,11 +349,11 @@
     }
 
     .badge {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
+      font-family: 'Caveat', cursive;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      padding: 3px 9px;
+      letter-spacing: 0.05em;
+      padding: 2px 10px;
       border-radius: 100px;
       display: inline-block;
       align-self: flex-start;
@@ -329,12 +365,19 @@
 
     /* ── Tab 4: In Season ── */
     .season-intro {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Caveat', cursive;
       font-style: italic;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 400;
       color: var(--muted);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .season-doodle-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.75rem;
     }
 
     .season-row {
@@ -365,13 +408,23 @@
     }
 
     /* ── Tab 5: Book a Conversation ── */
-    .book-header {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 22px;
-      color: var(--charcoal);
+    .book-header-wrap {
       text-align: center;
       margin-bottom: 2.5rem;
+    }
+
+    .book-nib {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .book-header {
+      font-family: 'Caveat', cursive;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--charcoal);
       line-height: 1.45;
     }
 
@@ -383,10 +436,10 @@
     .booking-section:first-of-type { border-top: 1px solid var(--hairline); }
 
     .booking-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+      font-family: 'Caveat', cursive;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 0.5rem;
@@ -438,19 +491,22 @@
     }
 
     .footer-cities {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-weight: 400;
       color: var(--muted);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       margin-bottom: 0.55rem;
     }
 
     .footer-est {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 13px;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
       color: var(--muted);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
 
     .footer-linkedin a {
@@ -463,39 +519,24 @@
 
     .footer-linkedin a:hover { opacity: 0.65; }
 
-    /* ── Chef's intro card ── */
-    .chef-intro-card {
-      text-align: center;
-      margin-bottom: 2rem;
+    /* ── Chef bio: icon left, intro text right ── */
+    .chef-bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.75rem;
+      margin-bottom: 0;
     }
 
     .profile-pic {
-      width: 160px;
-      height: 160px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
       mix-blend-mode: multiply;
+      flex-shrink: 0;
       display: block;
-      margin: 0 auto 0.75rem;
-    }
-
-    .chef-card-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--charcoal);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.35rem;
-    }
-
-    .chef-card-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
+      margin-top: 0.2rem;
     }
 
     /* ── Color of Change photo grid ── */
@@ -519,8 +560,8 @@
     @media (max-width: 640px) {
       body { padding: 2.5rem 1.25rem 3rem; }
 
-      .site-name { font-size: 38px; }
-      .tagline-2  { font-size: 17px; }
+      .site-name  { font-size: 48px; }
+      .tagline-2  { font-size: 19px; }
 
       .nav-inner  { justify-content: flex-start; padding: 0 0.25rem; }
 
@@ -529,11 +570,15 @@
       .season-row { grid-template-columns: 120px 1fr; gap: 1rem; }
 
       .ornament-line { max-width: 100px; }
+
+      .chef-bio { flex-direction: column; align-items: center; }
+      .chef-bio .profile-pic { margin-top: 0; margin-bottom: 0.5rem; }
+      .chef-bio .intro-para { text-align: center; }
     }
 
     @media (max-width: 420px) {
-      .site-name { font-size: 32px; }
-      .tagline-2  { font-size: 16px; }
+      .site-name { font-size: 40px; }
+      .tagline-2 { font-size: 17px; }
 
       .season-row {
         grid-template-columns: 1fr;
@@ -556,6 +601,24 @@
         <div class="ornament-diamond"></div>
         <div class="ornament-line"></div>
       </div>
+
+      <!-- ☕ coffee cup doodle — sits below the header ornament like a little stamp -->
+      <div class="header-doodle">
+        <svg class="doodle" width="26" height="28" viewBox="0 0 26 30" fill="none"
+             stroke="#B8974A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+             opacity="0.55" style="transform: rotate(-7deg);">
+          <!-- steam -->
+          <path d="M8,6 C8,4.2 10,4.2 10,6 C10,7.8 12,7.8 12,6"/>
+          <!-- body -->
+          <path d="M3,10.5 L4.8,22 L20.2,22 L22,10.5 Z"/>
+          <!-- rim -->
+          <path d="M2,10.5 C2,10 12.5,9.5 24,10.5"/>
+          <!-- handle -->
+          <path d="M22,14 C26,14 26,19.5 22,19.5"/>
+          <!-- saucer -->
+          <path d="M1,24 C1,24 12.5,26 24,24"/>
+        </svg>
+      </div>
     </header>
 
     <!-- ── Navigation ── -->
@@ -572,17 +635,22 @@
     <!-- ══ Tab 1: Chef's Note ══ -->
     <section class="tab-panel active visible" id="chefs-note" aria-label="Chef's Note">
 
-      <div class="chef-intro-card">
+      <div class="chef-bio">
         <img src="images/Lexi crayon profile icon.png" alt="Lexi Ding" class="profile-pic">
-        <p class="chef-card-name">Lexi Ding</p>
-        <p class="chef-card-subtitle">Finance &nbsp;·&nbsp; Hospitality &nbsp;·&nbsp; Technology</p>
+        <p class="intro-para">I started my first job behind the kitchen counter at a McDonald's in Saskatoon. Since then, I've run a fine dining kitchen, worked on billion-dollar deals on Wall Street, and built strategy for one of the world's largest local commerce platforms. Now I'm teaching myself to build with AI and explore my voice as a creator — in public. Welcome to the menu!</p>
       </div>
-      <div class="divider-hair"></div>
-      <p class="intro-para">I started my career in a McDonald's in Saskatoon. Since then, I ran my own fine dining restaurant at Cornell, worked on billion-dollar industrials transactions on Wall Street, and built strategy for one of the world's largest food delivery platforms. Now I'm learning to be a builder — in public. This site is the story behind the resume.</p>
 
       <div class="divider"></div>
 
-      <span class="section-label">Currently</span>
+      <!-- ★ star doodle beside "Currently" label -->
+      <div class="label-row">
+        <span class="section-label">Currently</span>
+        <svg class="doodle" width="16" height="16" viewBox="0 0 20 20" fill="none"
+             stroke="#B8974A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+             opacity="0.65" style="transform: rotate(18deg);">
+          <path d="M10,2 L12.2,7.8 L18.5,8.3 L14,12.4 L15.5,18.5 L10,15.2 L4.5,18.5 L6,12.4 L1.5,8.3 L7.8,7.8 Z"/>
+        </svg>
+      </div>
       <ul class="bullet-list">
         <li>New Role Incoming — June 2026</li>
         <li>Factor Fellow @ Primary Venture Partners / MLT</li>
@@ -592,7 +660,18 @@
 
       <div class="divider-hair"></div>
 
-      <span class="section-label">Previously</span>
+      <!-- ☕ coffee cup doodle beside "Previously" label -->
+      <div class="label-row">
+        <span class="section-label">Previously</span>
+        <svg class="doodle" width="19" height="20" viewBox="0 0 22 24" fill="none"
+             stroke="#B8974A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+             opacity="0.6" style="transform: rotate(5deg);">
+          <path d="M7,5 C7,3.5 9,3.5 9,5 C9,6.5 11,6.5 11,5"/>
+          <path d="M2.5,9 L4,19.5 L18,19.5 L19.5,9 Z"/>
+          <path d="M1.5,9 C1.5,8.5 11,8 21.5,9"/>
+          <path d="M19.5,12.5 C23,12.5 23,18 19.5,18"/>
+        </svg>
+      </div>
       <ul class="bullet-list">
         <li>Strategic Finance, New Verticals @ <a class="gold-link" href="https://www.doordash.com/" target="_blank" rel="noopener noreferrer">DoorDash</a></li>
         <li>Investment Banking @ <a class="gold-link" href="https://www.morganstanley.com/what-we-do/investment-banking" target="_blank" rel="noopener noreferrer">Morgan Stanley</a></li>
@@ -607,7 +686,9 @@
     <section class="tab-panel" id="story-behind" aria-label="The Story Behind">
 
       <div>
-        <h2 class="story-title">The First Kitchen</h2>
+        <div class="title-row">
+          <h2 class="story-title">🍔 The First Kitchen</h2>
+        </div>
         <p class="story-meta">Saskatoon, SK · 2014–2018</p>
         <div class="story-body">
           <p>I started working at McDonald's in 9th grade. Over four years, I worked every station — grilling, drive-thru, front of house — and became the youngest crew trainer at my location. I know every sandwich recipe by heart.</p>
@@ -618,39 +699,47 @@
       <div class="divider"></div>
 
       <div>
-        <h2 class="story-title">The Fine Dining Experience</h2>
+        <div class="title-row">
+          <h2 class="story-title">🍽️ The Fine Dining Experience</h2>
+        </div>
         <p class="story-meta">Cornell Hotel School · 2020–2022</p>
         <div class="story-body">
-          <p>I studied at Cornell's School of Hotel Administration with a real estate minor, and TA'd for both Real Estate and F&amp;B Operations courses. The highlight: I ran my own management night — a full fine dining restaurant service themed "Color of Change." Recipe design and costing, seating, table service, kitchen operations, P&amp;L — all of it.</p>
+          <p>I studied at Cornell's School of Hotel Administration with a real estate minor, and TA'd for courses in Real Estate and F&amp;B Operations.</p>
+          <p><strong>The Hotel School Highlight:</strong> I ran my own management night — a full fine dining restaurant service themed 'Color of Change.' Recipe design and costing, seating, table service, kitchen operations, P&amp;L — all of it.</p>
           <div class="photo-grid">
             <img src="images/ESTB COS MENU.jpg"      alt="Color of Change — menu">
             <img src="images/Bao Buns.jpg"            alt="Color of Change — bao buns">
             <img src="images/Main Course.jpg"         alt="Color of Change — main course">
             <img src="images/Matcha Tiramisu.jpg"     alt="Color of Change — matcha tiramisu">
           </div>
-          <p class="story-close">"Running a real restaurant as a student is not something most finance people have done. I'm glad I have. It taught me that hospitality is just operations with higher emotional stakes."</p>
+          <p class="story-close">'Running a real restaurant as a student is not something most finance people have done. I'm glad I have. It taught me that hospitality is just operations with higher emotional stakes.'</p>
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div>
-        <h2 class="story-title">The International Gateway into Finance</h2>
+        <div class="title-row">
+          <h2 class="story-title">🌏 The International Gateway into Finance</h2>
+        </div>
         <p class="story-meta">Hong Kong (Summer 2021) · New York (2022–2024)</p>
         <div class="story-body">
-          <p>I started at Morgan Stanley as a summer intern in Hong Kong on the Financial Sponsors desk, then returned full-time to New York in the Global Industrials Group. Two cities, two years, one relentless education.</p>
-          <p class="story-close">"Banking taught me to learn fast, work hard, and perform under pressure — and to never stop questioning whether there's a better solution. It built a kind of grit you can't manufacture anywhere else."</p>
+          <p>I started my investment banking career at Morgan Stanley as a summer intern in Hong Kong in the Financial Sponsors group, then returned full-time to New York in the Global Industrials Group.</p>
+          <p class="story-close">'Banking taught me to learn fast, work hard, and perform under pressure — and to never stop questioning whether there's a better solution. It built a kind of grit you can't manufacture anywhere else.'</p>
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div>
-        <h2 class="story-title">The Operator's Return — This Time in Tech</h2>
+        <div class="title-row">
+          <h2 class="story-title">💻 The Operator's Return — This Time in Tech</h2>
+        </div>
         <p class="story-meta">DoorDash · 2024–2026</p>
         <div class="story-body">
-          <p>I joined DoorDash in Strategic Finance on the New Verticals team, specifically the newly launched Retail business. Full circle: after studying hospitality and advising large companies on Wall Street, I ended up building strategy to connect them with customers at scale.</p>
-          <p class="story-close">"DoorDash was where strategy stopped being a deck and started being a decision. I learned to work across functions, move fast, and think in multi-sided systems. Same instinct as the kitchen — just a different kind of service."</p>
+          <p>I joined DoorDash in Strategic Finance on the New Verticals team, specifically the newly launched Retail business.</p>
+          <p><strong>Full Circle Moment:</strong> after studying hospitality and advising large companies on Wall Street, I ended up back in a consumer-focused industry building strategy to drive business operations at scale.</p>
+          <p class="story-close">'DoorDash was where strategy stopped being a deck and started being a decision. I learned to work across functions, move fast, and think in multi-sided systems. Same instinct as the kitchen — just a different kind of service.'</p>
         </div>
       </div>
 
@@ -659,14 +748,35 @@
     <!-- ══ Tab 3: Today's Specials ══ -->
     <section class="tab-panel" id="specials" aria-label="Today's Specials">
 
-      <span class="section-label">Next Course</span>
+      <!-- 🍴 fork & knife — "next course" on the menu -->
+      <div class="label-row">
+        <span class="section-label">Next Course</span>
+        <svg class="doodle" width="22" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="#B8974A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+             opacity="0.62" style="transform: rotate(-4deg);">
+          <!-- fork: three tines -->
+          <line x1="4" y1="1.5" x2="4" y2="8.5"/>
+          <line x1="6.5" y1="1.5" x2="6.5" y2="8.5"/>
+          <line x1="9" y1="1.5" x2="9" y2="8.5"/>
+          <!-- fork neck curve -->
+          <path d="M4,8.5 Q6.5,11 9,8.5"/>
+          <!-- fork handle -->
+          <line x1="6.5" y1="11" x2="6.5" y2="22.5"/>
+          <!-- knife blade -->
+          <path d="M15,1.5 C15,1.5 19.5,4.5 19.5,11.5 L15,13.5"/>
+          <!-- knife handle -->
+          <line x1="15" y1="13.5" x2="15" y2="22.5"/>
+        </svg>
+      </div>
       <div class="placeholder-box">
         <p>New chapter incoming. Check back in June 2026.</p>
       </div>
 
       <div class="divider"></div>
 
-      <span class="section-label">From the Kitchen</span>
+      <div class="label-row">
+        <span class="section-label">From the Kitchen</span>
+      </div>
       <div class="project-grid">
         <div class="project-card">
           <div class="project-name">This Website</div>
@@ -686,6 +796,19 @@
     <section class="tab-panel" id="in-season" aria-label="In Season">
 
       <p class="season-intro">What's currently in rotation.</p>
+
+      <!-- ☁ cloud doodle centered beneath the intro line -->
+      <div class="season-doodle-row">
+        <svg class="doodle" width="52" height="28" viewBox="0 0 52 30" fill="none"
+             stroke="#B8974A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"
+             opacity="0.45">
+          <path d="M10,25 C6,25 3,21.5 5,18.5 C3.5,15.5 6,13 9.5,14 C10.5,11 14,10 17.5,12 C19.5,9 24,9 26.5,12 C29.5,11 34,13 33,16.5 C37,17.5 37.5,22 35,24 C36,26 34.5,27.5 32.5,27 L12,27 C11,27.5 10,27 10,25 Z"/>
+          <!-- tiny rain drops beneath -->
+          <line x1="15" y1="28" x2="14.2" y2="29.5" stroke-width="1.2"/>
+          <line x1="21" y1="28" x2="20.2" y2="29.5" stroke-width="1.2"/>
+          <line x1="27" y1="28" x2="26.2" y2="29.5" stroke-width="1.2"/>
+        </svg>
+      </div>
 
       <div>
         <div class="season-row">
@@ -719,7 +842,25 @@
     <!-- ══ Tab 5: Book a Conversation ══ -->
     <section class="tab-panel" id="book" aria-label="Book a Conversation">
 
-      <p class="book-header">Book a Conversation Here — The Kitchen Is Always Open for the Right Connections</p>
+      <!-- ✒ pen nib doodle above the header text -->
+      <div class="book-header-wrap">
+        <div class="book-nib">
+          <svg class="doodle" width="18" height="24" viewBox="0 0 18 26" fill="none"
+               stroke="#B8974A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+               opacity="0.55" style="transform: rotate(-8deg);">
+            <!-- nib body -->
+            <path d="M2.5,2.5 L15.5,2.5 L17,8.5 L9,23 L1,8.5 Z"/>
+            <!-- center slit to tip -->
+            <line x1="9" y1="23" x2="9" y2="11"/>
+            <!-- shoulder dividers -->
+            <line x1="2.5" y1="2.5" x2="9" y2="11"/>
+            <line x1="15.5" y1="2.5" x2="9" y2="11"/>
+            <!-- ink bleed at tip -->
+            <circle cx="9" cy="22" r="1.4" fill="#B8974A" stroke="none" opacity="0.25"/>
+          </svg>
+        </div>
+        <p class="book-header">Book a Conversation Here — The Kitchen Is Always Open for the Right Connections</p>
+      </div>
 
       <div class="booking-section">
         <p class="booking-label">For Peers &amp; Collaborators</p>
@@ -746,7 +887,7 @@
   <!-- ── Footer ── -->
   <footer>
     <p class="footer-cities">New York City &nbsp;·&nbsp; Hong Kong &nbsp;·&nbsp; Toronto &nbsp;·&nbsp; Saskatoon</p>
-    <p class="footer-est">Est. 2026</p>
+    <p class="footer-est">— Est. 1999 —</p>
     <p class="footer-linkedin">
       <a href="https://www.linkedin.com/in/lexi-s-ding/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </p>
